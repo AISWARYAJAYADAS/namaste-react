@@ -1,6 +1,6 @@
 import React from 'react';
 import { RestaurantCard } from './RestaurantCard';
-import { restaurantData } from '../data/restaurantData';
+import { restaurants } from '../utils/mockData';
 
 export const Body = () => {
     return (
@@ -11,7 +11,7 @@ export const Body = () => {
             </div>
                 <h2 className='section-title'>Popular Restaurants</h2>
                 <div className='cards-section'>
-                    {restaurantData.map(restaurant => (
+                    {restaurants.map(restaurant => (
                         <RestaurantCard key={restaurant.id} restaurant={restaurant} />
                     ))}
                 </div>
