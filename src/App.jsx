@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useState, createContext} from 'react';
 import { Header } from './components/Header';
-import { Body } from './components/Body';
 import { Footer } from './components/Footer';
+import { Outlet } from 'react-router-dom';
 
+// Create Context
+export const AppContext = createContext();
 
-export const App= () => {
+export const App = () => {
+    const [searchText, setSearchText] = useState("");
+    const [showTopRated, setShowTopRated] = useState(false);
+
     return (
-        <div className='app'>
-            <Header />
-            <Body />
-            <Footer />
-        </div>
-    );
-};
-
+        <AppContext.Provider value={{ searchText, setSearchText, showTopRated, setShowTopRated }}>
+            <div className='app'>
+                <Header />
+                <Outlet />
+                <Footer />
+            </div>
+        </AppContext.Provider>
+        );
+}; 

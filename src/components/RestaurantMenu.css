@@ -1,0 +1,270 @@
+/* 1. MAIN CONTAINER - The big box that holds everything */
+.restaurant-menu {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+/* 2. RESTAURANT HEADER - The top section with restaurant info */
+.restaurant-header {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 3. RESTAURANT NAME - The big title */
+.restaurant-name {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 8px 0;
+}
+
+/* 4. RESTAURANT CUISINES - The cuisine list */
+.restaurant-cuisines {
+    color: #666;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+/* 5. RESTAURANT DETAILS - Rating, cost, location */
+.restaurant-details {
+    display: flex;
+    gap: 20px;
+    margin: 16px 0;
+}
+
+/* 6. RATING BADGE - The green rating box */
+.rating-badge {
+    background-color: #48c479;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* 7. RESTAURANT INFO - Cost and location text */
+.restaurant-info {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* 8. ERROR CONTAINER - Error message box */
+.error-container {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: white;
+    border-radius: 12px;
+    margin: 20px;
+}
+
+/* 9. RETRY BUTTON - Try again button */
+.retry-button {
+    background-color: #ff6b35;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+/* Offers Section */
+.offers-section {
+    background-color: white;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.offers-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin: 0 0 20px 0;
+    border-bottom: 2px solid #ff6b35;
+    padding-bottom: 8px;
+}
+
+.offers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 16px;
+}
+
+.offer-card {
+    border: 2px solid #ff6b35;
+    border-radius: 12px;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff5f0 0%, #ffffff 100%);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.2);
+}
+
+.offer-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b35, #ff8c42);
+}
+
+.offer-content {
+    text-align: center;
+}
+
+.offer-header {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ff6b35;
+    margin: 0 0 8px 0;
+}
+
+.offer-description {
+    color: #666;
+    font-size: 14px;
+    margin: 8px 0;
+    line-height: 1.4;
+}
+
+.offer-tag {
+    display: inline-block;
+    background-color: #ff6b35;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.no-offers {
+    text-align: center;
+    color: #666;
+    font-size: 16px;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 2px dashed #ddd;
+}
+
+/* Responsive Design for Offers */
+@media (max-width: 768px) {
+    .offers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .offer-card {
+        padding: 16px;
+    }
+
+    .offer-header {
+        font-size: 18px;
+    }
+}
+
+/* Add this to your existing CSS */
+
+/* Menu Section */
+.menu-section {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-title {
+    margin: 0 0 20px 0;
+    color: #333;
+    font-size: 20px;
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.menu-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.menu-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+.item-info {
+    flex: 1;
+}
+
+.item-info h3 {
+    margin: 0 0 8px 0;
+    color: #333;
+    font-size: 16px;
+}
+
+.price {
+    color: #ff6b35;
+    font-weight: bold;
+    font-size: 16px;
+    margin: 8px 0;
+}
+
+.description {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.4;
+    margin: 8px 0;
+}
+
+.menu-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.no-items {
+    text-align: center;
+    color: #666;
+    padding: 40px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .menu-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu-item img {
+        align-self: center;
+    }
+}
