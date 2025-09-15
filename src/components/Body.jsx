@@ -1,5 +1,5 @@
 import React from 'react';
-import { RestaurantCard } from './RestaurantCard';
+import { RestaurantCard , PromotionalRestaurantCard } from './RestaurantCard';
 import { Shimmer } from './Shimmer';
 import { useRestaurantsData } from '../utils/useRestaurantsData';
 import { useRestaurantFilters } from '../utils/useRestaurantFilters';
@@ -56,9 +56,14 @@ export const Body = () => {
                 </div>
             ) : (
                 <div className='cards-section'>
-                    {filteredRestaurants.map(restaurant => (
-                        <RestaurantCard key={restaurant.info.id} restaurant={restaurant} />
-                    ))}
+                    {filteredRestaurants.map(restaurant => {
+                        const hasDiscount = restaurant?.info?.aggregatedDiscountInfoV3?.header;
+                        return hasDiscount ? (
+                            <PromotionalRestaurantCard key={restaurant.info.id} restaurant={restaurant} />
+                        ) : (
+                            <RestaurantCard key={restaurant.info.id} restaurant={restaurant} />
+                        );
+                    })}
                 </div>
             )}
         </div>

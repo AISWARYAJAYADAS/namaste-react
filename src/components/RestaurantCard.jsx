@@ -1,6 +1,7 @@
 import React from "react";
 import { getImageUrl } from "../utils/imageUtils";
 import { Link } from "react-router-dom";
+import { withPromotionalLabel } from "./withPromotionalLabel";
 
 
 export const RestaurantCard = ({restaurant})=>{
@@ -20,3 +21,5 @@ export const RestaurantCard = ({restaurant})=>{
         </Link>
     );
 }
+
+export const PromotionalRestaurantCard = withPromotionalLabel(RestaurantCard);
