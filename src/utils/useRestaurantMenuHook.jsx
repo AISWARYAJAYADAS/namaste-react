@@ -7,6 +7,7 @@ export const useRestaurantMenu = (id) => {
     const [menuItems, setMenuItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [menuCategories3, setMenuCategories3] = useState([]);
 
     useEffect(() => {
         if (!id) return; // Guard clause
@@ -23,6 +24,13 @@ export const useRestaurantMenu = (id) => {
             setRestaurantInfo(data.restaurantInfo);
             setOffers(data.offers);
             setMenuItems(data.menuItems);
+            setMenuCategories3(data.menuCategories3);
+
+
+            console.log("data",data);
+            console.log("hook categoryTitles",data.categoryTitles);
+            // console.log("restaurantInfo",data.restaurantInfo);
+            // console.log("menuItems",data.menuItems);
             
             if (!data.restaurantInfo) {
                 throw new Error('Restaurant data not found in API response');
@@ -39,6 +47,7 @@ export const useRestaurantMenu = (id) => {
         restaurantInfo,
         offers,
         menuItems,
+        menuCategories3,
         loading,
         error,
         refetch: fetchRestaurantMenu

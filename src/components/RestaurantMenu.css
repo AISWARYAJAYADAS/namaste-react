@@ -53,7 +53,6 @@
     font-size: 14px;
 }
 
-
 /* 8. ERROR CONTAINER - Error message box */
 .error-container {
     padding: 40px 20px;
@@ -73,8 +72,6 @@
     font-size: 16px;
     cursor: pointer;
 }
-
-
 
 /* Offers Section */
 .offers-section {
@@ -179,8 +176,6 @@
     }
 }
 
-/* Add this to your existing CSS */
-
 /* Menu Section */
 .menu-section {
     background: white;
@@ -267,4 +262,107 @@
     .menu-item img {
         align-self: center;
     }
+}
+
+/* Category Section */
+.category-section {
+    background-color: white;
+    border-radius: 12px;
+    margin-bottom: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.category-header:hover {
+    background-color: #f9fafb;
+}
+
+.category-header:last-child {
+    border-bottom: none;
+}
+
+.category-title {
+    font-weight: 600;
+    font-size: 16px;
+    color: #1f2937;
+    margin: 0;
+}
+
+.category-arrow {
+    width: 20px;
+    height: 20px;
+    color: #9ca3af;
+    transition: transform 0.2s;
+}
+
+.category-arrow.rotated {
+    transform: rotate(180deg);
+}
+
+.category-body {
+    padding: 24px;
+    background-color: #f9fafb;
+}
+
+.category-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.category-item {
+    background-color: white;
+    padding: 16px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border: 1px solid #f3f4f6;
+}
+
+.category-item-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.category-item-info {
+    flex: 1;
+    padding-right: 16px;
+}
+
+.category-item-title {
+    font-weight: 500;
+    font-size: 16px;
+    color: #1f2937;
+    margin: 0 0 4px 0;
+}
+
+.category-item-price {
+    font-size: 14px;
+    color: #4b5563;
+    margin: 0 0 8px 0;
+}
+
+.category-item-description {
+    font-size: 12px;
+    color: #6b7280;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.category-item-image {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    object-fit: cover;
 }

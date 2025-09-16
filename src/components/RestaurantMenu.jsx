@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import { useParams } from "react-router-dom";
 import { useRestaurantMenu } from "../utils/useRestaurantMenuHook";
 import { RestaurantHeader } from "./RestaurantHeader";
@@ -6,16 +6,20 @@ import { OffersSection } from "./OffersSection";
 import { MenuSection } from "./MenuSection";
 import { Shimmer } from "./Shimmer";
 import "./RestaurantMenu.css";
+import { RestaurantCategory } from "./RestaurantCategory";
 
 export const RestaurantMenu = () => {
     const {id} = useParams();
     console.log('Restaurant ID from URL:', id);
+
+    const [expandedCategory, setExpandedCategory] = useState(null);
 
     // All complex logic is now in the custom hook!
     const { 
         restaurantInfo, 
         offers, 
         menuItems, 
+        menuCategories3,
         loading, 
         error, 
         refetch 
@@ -47,8 +51,9 @@ export const RestaurantMenu = () => {
     return(
         <div className="restaurant-menu">
            <RestaurantHeader restaurantInfo={restaurantInfo} />
+           <RestaurantCategory categoryData={menuCategories3} expandedCategory={expandedCategory} setExpandedCategory={setExpandedCategory} />
            <OffersSection offers={offers} />
-           <MenuSection menuItems={menuItems} />
+           <MenuSection menuItems={menuItems} />         
         </div>
     );
 };

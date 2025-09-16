@@ -6,7 +6,7 @@ export const withPromotionalLabel = (RestaurantCard) => {
 
         // Extract discount information from restaurant data
         const discountInfo = restaurant?.info?.aggregatedDiscountInfoV3;
-        console.log("discountInfo",discountInfo);
+        //console.log("discountInfo",discountInfo);
 
         const discountText = discountInfo ? 
         [discountInfo.discountTag, discountInfo.header, discountInfo.subHeader]
