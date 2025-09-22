@@ -51,8 +51,13 @@ export const RestaurantMenu = () => {
     return(
         <div className="restaurant-menu">
            <RestaurantHeader restaurantInfo={restaurantInfo} />
-           <RestaurantCategory categoryData={menuCategories3} expandedCategory={expandedCategory} setExpandedCategory={setExpandedCategory} />
-           <OffersSection offers={offers} />
+            <RestaurantCategory 
+                categoryData={menuCategories3} 
+                expandedCategory={expandedCategory} 
+                setExpandedCategory={setExpandedCategory}
+                restaurantInfo={restaurantInfo}
+            />           
+            <OffersSection offers={offers} />
            <MenuSection menuItems={menuItems} />         
         </div>
     );

@@ -57,6 +57,7 @@ export const Body = () => {
             ) : (
                 <div className='cards-section'>
                     {filteredRestaurants.map(restaurant => {
+                        console.log("Parent RESTAURANT", restaurant);
                         const hasDiscount = restaurant?.info?.aggregatedDiscountInfoV3?.header;
                         return hasDiscount ? (
                             <PromotionalRestaurantCard key={restaurant.info.id} restaurant={restaurant} />

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ChevronDown } from 'lucide-react';
 import { ItemList } from "./ItemList";
 
-export const RestaurantCategory = ({ categoryData,expandedCategory,setExpandedCategory }) => {
+export const RestaurantCategory = ({ categoryData, expandedCategory, setExpandedCategory, restaurantInfo }) => {
     
     const toggleCategory = (index) => {
         setExpandedCategory(expandedCategory === index ? null : index);
@@ -32,13 +32,10 @@ export const RestaurantCategory = ({ categoryData,expandedCategory,setExpandedCa
                         />
                     </div>
                     
-                    
                     {/* Category Body*/}
                     {expandedCategory === index && (
-                        <ItemList itemCards={category.itemCards} />
+                        <ItemList itemCards={category.itemCards} restaurantInfo={restaurantInfo} />
                     )}
-
-
                 </div>
             ))}
         </div>

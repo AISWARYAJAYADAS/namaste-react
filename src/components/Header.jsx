@@ -4,10 +4,15 @@ import { Link } from 'react-router-dom';
 import { AppContext } from '../App';
 import { useContext } from 'react';
 import { useOnlineStatus } from '../utils/useOnlineStatus';
+import { useSelector } from 'react-redux';
+
 
 export const Header = () => {
     const { searchText, setSearchText, showTopRated, setShowTopRated } = useContext(AppContext);
     const isOnline = useOnlineStatus();
+
+    // subscribing to the store using useSelector hook
+    const cartItems = useSelector(store => store.cart.items);
     
     return (
         <div className='header'>
@@ -37,7 +42,7 @@ export const Header = () => {
                     <li><Link to="/about">About Us</Link></li>
                     <li><Link to="/contact">Contact Us</Link></li>
                     <li><Link to="/grocery">Grocery</Link></li>
-                    <li>Cart</li>
+                    <li><Link to="/cart">Cart {cartItems.length}</Link></li>
                 </ul>
 
                 {/* Compact Toggle */}

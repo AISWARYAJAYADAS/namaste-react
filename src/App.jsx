@@ -2,6 +2,8 @@ import React, {useState, createContext} from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { Outlet } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { appStore } from './utils/appStore';
 
 // Create Context
 export const AppContext = createContext();
@@ -11,12 +13,14 @@ export const App = () => {
     const [showTopRated, setShowTopRated] = useState(false);
 
     return (
-        <AppContext.Provider value={{ searchText, setSearchText, showTopRated, setShowTopRated }}>
+            <Provider store={appStore}>
+            <AppContext.Provider value={{ searchText, setSearchText, showTopRated, setShowTopRated }}>
             <div className='app'>
                 <Header />
                 <Outlet />
                 <Footer />
             </div>
-        </AppContext.Provider>
+            </AppContext.Provider>
+            </Provider>
         );
 }; 
