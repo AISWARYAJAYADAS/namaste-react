@@ -1,12 +1,19 @@
 # Food Delivery App - Learning Project
 
-A React learning project inspired by food delivery apps like Swiggy.  
-The goal of this project is to practice modern web development concepts including component architecture, responsive design, and dynamic data rendering.
+A React learning project inspired by food delivery apps like Swiggy. This project demonstrates modern web development concepts including component architecture, state management, responsive design, and dynamic data rendering.
+
+## Rough UI Sketch
+
+![Rough Design](./images/image.png)
 
 ## Project Screenshots
 
-![Home Page](./images/home-screenshot.png)
-![Restaurant Menu](./images/menu-screenshot.png)
+![Home Page](./images/home.png)
+![Search](./images/search.png)
+![TopRated](./images/toprate.png)
+![Restaurant Menu](./images/detail.png)
+![cart](./images/cart.png)
+![Empty cart](./images/emptycart.png)
 
 ## How to Run Locally
 
@@ -34,51 +41,38 @@ The goal of this project is to practice modern web development concepts includin
    http://localhost:5173
    ```
 
-## Rough UI Sketch
-
-![Rough Design](./images/image.png)
-
-## UI Components
-
-- **Header**: Logo and navigation menu
-- **Body**: Search bar and restaurant cards
-- **Footer**: Company information and links
-
 ## Tech Stack
 
 - React 19
 - Vite
 - React Router
-- CSS3
+- Redux Toolkit
+- Tailwind CSS
+- Lucide React
+- Vitest
 
-## Current Features
+## Features
 
-**Completed:**
-
-- Header with logo, search functionality, and navigation
-- Restaurant listing with cards
+- Restaurant listing with real-time data from Swiggy API
 - Search and filter functionality
-- Individual restaurant menu pages
-- Responsive design
-- Loading states with Shimmer UI
-- Error handling
-- React Router navigation
+- Individual restaurant menu pages with categorized items
+- Shopping cart with add/remove functionality
+- Order summary with delivery fee and tax calculations
+- Responsive design for desktop and mobile
+- Loading states and error handling
+- Online/offline status indication
 
-## Next Steps
+## Key Components
 
-- Optimize app performance
-- Improve UI/UX design
-- Add Redux Toolkit for state management
-- Implement testing
+- **Header**: Logo, search, navigation, and cart indicator
+- **Body**: Restaurant listing with search and filter capabilities
+- **RestaurantMenu**: Menu display with categories
+- **Cart**: Shopping cart with order summary
+- **RestaurantCard**: Restaurant display with promotional labels
 
-## Planned Enhancements
+## Testing
 
-- Optimize app performance
-- Improve UI/UX design
-- Add Redux Toolkit for state management
-- Implement testing
-
-## Acknowledgments
-
-- Design inspiration from Swiggy
-- Learning from Namaste React course
+```bash
+npm test
+npm run test:watch
+```
